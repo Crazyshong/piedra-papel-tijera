@@ -1,6 +1,12 @@
 function getComputerChoice(){
+    const objeto = ["piedra", "papel", "tijera"]
+    const aleatorio = objeto[Math.floor(Math.random()*objeto.length)]
+
+    return aleatorio
 
 }
+var computerSelection = getComputerChoice()
+
 
 function playRound(playerSelection, computerSelection){
     let material = playerSelection.toLowerCase()
@@ -48,8 +54,7 @@ function playRound(playerSelection, computerSelection){
 
 
 
-var playerSelection = "papel"
-var computerSelection = "piedra"
+var playerSelection = "tijera"
 
 console.log(playRound(playerSelection, computerSelection))
 
