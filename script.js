@@ -5,8 +5,6 @@ function getComputerChoice(){
     return aleatorio
 
 }
-var computerSelection = getComputerChoice()
-
 
 function playRound(playerSelection, computerSelection){
     let material = playerSelection.toLowerCase()
@@ -54,10 +52,27 @@ function playRound(playerSelection, computerSelection){
 
 
 
-var playerSelection = "tijera"
-
-console.log(playRound(playerSelection, computerSelection))
-
 function game(){
+    let playerScore = 0
+    let computerScore = 0
+    let playerSelection = window.prompt("¿Que escogiste?")
+    let computerSelection = getComputerChoice()
+    let resultado = playRound(playerSelection, computerSelection)
+
+    if (resultado.includes("Has ganado")){
+        playerScore++
+    } else {
+        if (resultado.includes("Has perdido")){
+            computerScore++
+        } else { 
+            if (resultado.includes("empate")){
+                playerScore++
+                computerScore++
+            }
+        }
+    }
+    return resultado + " player: " + playerScore
 
 }
+
+console.log (game())
